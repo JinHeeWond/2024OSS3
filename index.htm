@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title-text {
+            font-size: 30px;
+            margin: 20px 50px 20px 10px;
+        }
+        .small-text {
+            font-size: 20px;
+        }
+        .inline-text {
+            display: inline;
+        }
+        .box {
+            border: 1px solid purple;
+            font-size: 24px;
+            margin: 20px 10px 0px 10px;
+            padding: 10px;
+            width: calc(100% - 80px);
+            height: 70px;
+            background-color: lavender;
+            color: black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .boxsmall{
+            border: 1px solid purple;
+            font-size: 24px;
+            margin: 0px 10px 0px 10px;
+            padding: 10px;
+            width: calc(100% - 80px);
+            height: 140px;
+            background-color: lavender;
+            color: black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .boxbig{
+            border: 1px solid purple;
+            font-size: 24px;
+            margin: 0px 0px 0px 10px;
+            padding: 10px;
+            width: calc(100% - 80px);
+            height: 70px;
+            background-color: lavender;
+            color: black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .boxcomplete{
+            border: 1px solid purple;
+            font-size: 24px;
+            margin: 20px 0px 0px 0px;
+            padding: 10px;
+            width: 100%;
+            height: 70px;
+            background-color: lavender;
+            color: black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* 각 컬럼이 동일한 너비를 갖도록 설정 */
+            border-left: 2px solid purple; /* 보라색 세로선 */
+            height: 129%; /* 상자 높이에 맞춤 */
+        }
+        .col:first-child {
+            border-left: none; /* 첫 번째 컬럼은 세로선 없음 */
+        }
+        
+        /* 중첩된 상자에 대한 CSS */
+        .nested-row {
+            display: flex;
+            width: 100%;
+            background-color: #D8BFD8; /* 진한 자주색 */
+            margin-top: 50px; /* 박스들 간의 간격 */
+        }
+
+        .nested-col-md-6 {
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            background-color: #D8BFD8; /* 진한 자주색 */
+            color: black;
+            box-sizing: border-box;
+            border: 1px solid purple;
+        }
+        .col-md-8-label {
+    font-size: 24px;
+    text-align: center;
+    color: black;
+    position: relative; /* 상대 위치 지정 */
+    top: -30px; /* 텍스트를 위로 이동 */
+    left: 40%; /* 부모 요소의 50%만큼 왼쪽으로 이동 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    padding: 0 10px; /* 배경에 여백 추가 */
+}
+
+    </style>
+</head>
+<body>
+
+    <p class="title-text">
+        BootStrap grid examples
+    </p>
+
+    <p class="title-text small-text">
+        Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+    </p>
+
+    <p class="title-text small-text">
+        In these examples the
+        <span class="inline-text" style="color: purple;">
+            .themed-grid-col
+        </span>
+        class is added to the columns to add some theming. This is not a class that is available in Bootstrap by default.
+    </p>
+
+    <p class="title-text">
+        Five grid tiers
+        <br>
+        <span class="small-text">
+            There are five tiers to the Bootstrap grid system, one for each range of devices we support. Each tier starts at a minimum viewport size and automatically applies to the larger devices unless overridden.
+        </span>
+    </p>
+
+    <div class="box">
+        <div class="col">.col-4</div>
+        <div class="col">.col-4</div>
+        <div class="col">.col-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-sm-4</div>
+        <div class="col">.col-sm-4</div>
+        <div class="col">.col-sm-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-md-4</div>
+        <div class="col">.col-md-4</div>
+        <div class="col">.col-md-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-lg-4</div>
+        <div class="col">.col-lg-4</div>
+        <div class="col">.col-lg-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-xl-4</div>
+        <div class="col">.col-xl-4</div>
+        <div class="col">.col-xl-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-xxl-4</div>
+        <div class="col">.col-xxl-4</div>
+        <div class="col">.col-xxl-4</div>
+    </div>
+    
+
+    <p class="title-text">
+        Three equal columns
+    </p>
+
+    <p class="title-text small-text">
+        Get three equal-width columns
+        <span style="font-weight: bold;">starting at desktops and scaling to large desktops</span>
+        . On mobile devices, tablets and below, the columns will automatically stack.
+    </p>
+
+    <div class="box">
+        <div class="col">.col-md-4</div>
+        <div class="col">.col-md-4</div>
+        <div class="col">.col-md-4</div>
+    </div>
+
+    <p class="title-text">
+        Three equal columns alternative
+    </p>
+
+    <p class="title-text small-text">
+        By using the 
+        <span class="inline-text" style="color: purple;">
+            .row-cols-*
+        </span>
+        classes, you can easily create a grid with equal columns.
+    </p>
+
+    <div class="box">
+        <div class="col">.col child of .row-cols-md-3</div>
+        <div class="col">.col child of .row-cols-md-3</div>
+        <div class="col">.col child of .row-cols-md-3</div>
+    </div>
+
+    <p class="title-text">
+        Three unequal columns
+    </p>
+
+    <p class="title-text small-text">
+        Get three columns 
+        <span style="font-weight: bold;">starting at desktops and scaling to large desktops </span>
+        of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.
+    </p>
+    
+    <div class="box">
+        <div class="col" style="flex-grow: 3;">.col-md-3</div>
+        <div class="col" style="flex-grow: 6;">.col-md-6</div>
+        <div class="col" style="flex-grow: 3;">.col-md-3</div>
+    </div>
+    
+    <p class="title-text">
+        Two columns
+    </p>
+
+    <p class="title-text small-text">
+        Get two columns 
+        <span style="font-weight: bold;">starting at desktops and scaling to large desktops</span>
+    </p>
+
+    <div class="box">
+        <div class="col" style="flex-grow: 8;">.col-md-8</div>
+        <div class="col" style="flex-grow: 4;">.col-md-4</div>
+    </div>
+
+    <p class="title-text">
+        Full width, single column
+    </p>
+
+    <p class="title-text small-text">
+        <span class="inline-text" style="color: #FFC939;">
+            No grid classes are necessary for full-width elements.
+        </span>
+    </p>
+    <hr class="my-4">
+
+    <p class="title-text">
+        Two columns with two nested columns
+    </p>
+
+    <p class="title-text small-text">
+        Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns
+        <span style="font-weight: bold;"> starting at desktops and scaling to large desktops</span>
+        , with another two (equal widths) within the larger column.
+    </p>
+
+    <p class="title-text small-text">
+        At mobile device sizes, tablets and down, these columns and their nested columns will stack. 
+    </p>
+
+    <div class="boxsmall">
+        <!-- .col-md-8 텍스트를 추가 -->
+        <div class="col-md-8-label">.col-md-8</div> 
+    
+        <div class="col" style="flex-grow: 8;">
+            <!-- 여기에 중첩된 두 개의 .col-md-6 박스를 추가 -->
+            <div class="nested-row">
+                <div class="nested-col-md-6">.col-md-6</div>
+                <div class="nested-col-md-6">.col-md-6</div>
+            </div>
+        </div>
+        <div class="col" style="flex-grow: 4;">.col-md-4</div>
+    </div>
+    
+
+    <hr class="my-4">
+
+    <p class="title-text">
+        Mixed: mobile and desktop
+    </p>
+
+    <p class="title-text small-text">
+        The Bootstrap v5 grid system has six tiers of classes: xs (extra small, this class infix is not used), sm (small), md (medium), lg (large), xl (x-large), and xxl (xx-large). You can use nearly any combination of these classes to create more dynamic and flexible layouts.
+        <br>
+        Each tier of classes scales up, meaning if you plan on setting the same widths for md, lg, xl and xxl, you only need to specify md.
+    </p>
+
+    <div class="box">
+        <div class="col" style="flex-grow: 8;">.col-md-8</div>
+        <div class="col" style="flex-grow: 4;">.col-6 .col-md-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-6 .col-md-4</div>
+        <div class="col">.col-6 .col-md-4</div>
+        <div class="col">.col-6 .col-md-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-6</div>
+        <div class="col">.col-6</div>
+    </div>
+
+    <hr class="my-4">
+    
+    <p class="title-text">
+        Mixed: mobile, tablet, and desktop
+    </p>
+
+    <div class="box">
+        <div class="col" style="flex-grow: 8;">.col-sm-6 .col-lg-8</div>
+        <div class="col" style="flex-grow: 4;">.col-6 .col-lg-4</div>
+    </div>
+
+    <div class="box">
+        <div class="col">.col-6 .col-sm-4</div>
+        <div class="col">.col-6 .col-sm-4</div>
+        <div class="col">.col-6 .col-sm-4</div>
+    </div>
+
+    <hr class="my-4">
+
+    <p class="title-text">
+        Gutters
+    </p>
+
+    <p class="title-text small-text">
+        With 
+        <span class="inline-text" style="color: purple;">
+            .gx-*
+        </span>
+        classes, the horizontal gutters can be adjusted.
+    </p>
+
+    <div class="box">
+        <div class="col">
+            <span class="inline-text" style="color: purple;">
+                .col &nbsp;
+            </span>
+                with &nbsp;
+             <span class="inline-text" style="color: purple;">
+                .gx-4 &nbsp;
+            </span>
+                 gutters 
+            </div>
+            <div class="col">
+                <span class="inline-text" style="color: purple;">
+                    .col &nbsp;
+                </span>
+                    with &nbsp;
+                 <span class="inline-text" style="color: purple;">
+                    .gx-4 &nbsp;
+                </span>
+                     gutters 
+                </div>
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .gx-4 &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+    </div>
+
+    <div class="boxbig">
+        <div class="col">
+            <span class="inline-text" style="color: purple;">
+                .col &nbsp;
+            </span>
+                with &nbsp;
+             <span class="inline-text" style="color: purple;">
+                .gx-4 &nbsp;
+            </span>
+                 gutters 
+            </div>
+            <div class="col">
+                <span class="inline-text" style="color: purple;">
+                    .col &nbsp;
+                </span>
+                    with &nbsp;
+                 <span class="inline-text" style="color: purple;">
+                    .gx-4 &nbsp;
+                </span>
+                     gutters 
+                </div>
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .gx-4 &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+    </div>
+
+    <p class="title-text small-text">
+       Use the
+        <span class="inline-text" style="color: purple;">
+            .gx-*
+        </span>
+        classes to control the vertical gutters.
+    </p>
+
+    <div class="boxbig">
+        <div class="col">
+            <span class="inline-text" style="color: purple;">
+                .col &nbsp;
+            </span>
+                with &nbsp;
+             <span class="inline-text" style="color: purple;">
+                .gy-4 &nbsp;
+            </span>
+                 gutters 
+            </div>
+
+            <div class="col">
+                <span class="inline-text" style="color: purple;">
+                    .col &nbsp;
+                </span>
+                    with &nbsp;
+                 <span class="inline-text" style="color: purple;">
+                    .gy-4 &nbsp;
+                </span>
+                     gutters 
+                </div>
+
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .gy-4 &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .gy-4 &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+        
+                    <div class="col">
+                        <span class="inline-text" style="color: purple;">
+                            .col &nbsp;
+                        </span>
+                            with &nbsp;
+                         <span class="inline-text" style="color: purple;">
+                            .gy-4 &nbsp;
+                        </span>
+                             gutters 
+                        </div>
+        
+                        <div class="col">
+                            <span class="inline-text" style="color: purple;">
+                                .col &nbsp;
+                            </span>
+                                with &nbsp;
+                             <span class="inline-text" style="color: purple;">
+                                .gy-4 &nbsp;
+                            </span>
+                                 gutters 
+                            </div>
+                    </div>
+
+         <p class="title-text small-text">
+       With
+        <span class="inline-text" style="color: purple;">
+            .gx-*
+        </span>
+        classes, the gutters in both directions can be adjusted.
+    </p>
+
+    <div class="boxbig">
+        <div class="col">
+            <span class="inline-text" style="color: purple;">
+                .col &nbsp;
+            </span>
+                with &nbsp;
+             <span class="inline-text" style="color: purple;">
+                .g-3 &nbsp;
+            </span>
+                 gutters 
+            </div>
+
+            <div class="col">
+                <span class="inline-text" style="color: purple;">
+                    .col &nbsp;
+                </span>
+                    with &nbsp;
+                 <span class="inline-text" style="color: purple;">
+                    .g-3  &nbsp;
+                </span>
+                     gutters 
+                </div>
+
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .g-3  &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="col">
+                    <span class="inline-text" style="color: purple;">
+                        .col &nbsp;
+                    </span>
+                        with &nbsp;
+                     <span class="inline-text" style="color: purple;">
+                        .g-3  &nbsp;
+                    </span>
+                         gutters 
+                    </div>
+        
+                    <div class="col">
+                        <span class="inline-text" style="color: purple;">
+                            .col &nbsp;
+                        </span>
+                            with &nbsp;
+                         <span class="inline-text" style="color: purple;">
+                            .g-3  &nbsp;
+                        </span>
+                             gutters 
+                        </div>
+        
+                        <div class="col">
+                            <span class="inline-text" style="color: purple;">
+                                .col &nbsp;
+                            </span>
+                                with &nbsp;
+                             <span class="inline-text" style="color: purple;">
+                                .g-3  &nbsp;
+                            </span>
+                                 gutters 
+                            </div>
+                    </div>
+                
+                    <hr class="my-4">
+
+                    <p class="title-text">
+                        Containers
+                    </p>
+
+                    <p class="title-text small-text">
+                        Additional classes added in Bootstrap v4.4 allow containers that are 100% wide until a particular breakpoint. v5 adds a new 
+                        <span class="inline-text" style="color: purple;">
+                            xxl
+                        </span>
+                        breakpoint.
+                    </p>
+
+                    <div class="box">
+                        .container
+                    </div>
+
+                    <div class="box">
+                        .container-sm
+                    </div>
+
+                    <div class="box">
+                        .container-md
+                    </div>
+
+                    <div class="box">
+                        .container-lg
+                    </div>
+
+                    <div class="box">
+                        .container-xl
+                    </div>
+
+                    <div class="box">
+                        .container-xxl
+                    </div>
+
+                    <div class="boxcomplete">
+                        .container-fluid
+                    </div>
+
+</body>
+</html>
